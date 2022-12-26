@@ -9,7 +9,14 @@ const PORT  = process.env.PORT || 5000;
 
 //Middleware
 //We make this new Addition to Cors
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://perntodo-backend.onrender.com",
+    methods: ["GET", "DELETE", "POST", "PUT"]
+  }
+));
+
+
 app.use(express.json());
 
 //ROUTES//
